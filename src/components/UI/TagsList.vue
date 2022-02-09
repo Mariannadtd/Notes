@@ -4,7 +4,7 @@
       class="tag-item"
       v-for="item in items"
       :key="item"
-      @click="$emit('onItemClick', item)"
+      @click="$emit('onItemClick', item); toggleItemColor(index)"
       :class="{ isPreview: isPreview }"
     >
       <span>{{ item }}</span>
@@ -26,6 +26,13 @@ export default {
     isPreview: {
       type: Boolean,
       default: false
+    }
+  },
+  methods: {
+    toggleItemColor(index) {
+      let item = this.items[index];
+      item.isActive = !item.isActive;
+      this.$set(this.items, index, item);
     }
   }
 }

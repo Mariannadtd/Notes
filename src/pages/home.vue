@@ -1,6 +1,8 @@
 <template>
-  <Form @onSubmit="handleSubmit" />
-  <List @onRemove="handleRemove" :items="notes" />
+  <div>
+    <Form @onSubmit="handleSubmit" />
+    <List @onRemove="handleRemove" :items="notes" />
+  </div>
 </template>
 
 <script>
