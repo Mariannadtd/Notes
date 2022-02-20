@@ -4,8 +4,8 @@
       class="tag-item"
       v-for="item in items"
       :key="item"
-      @click="$emit('onItemClick', item); toggleItemColor(index)"
-      :class="{ isPreview: isPreview }"
+      @click="$emit('onItemClick', item); toggleItemColor(index)" isActive
+      :class="{ isPreview: isPreview, isActive: isActive }"
     >
       <span>{{ item }}</span>
     </div>
